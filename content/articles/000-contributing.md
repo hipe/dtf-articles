@@ -1,8 +1,21 @@
 ---
-title: article 000 - contributing
+title: "article 000: contributing"
 date: 2018-11-29
 draft: false
 ---
+
+the objective of this article is to enable us "contributors" to contribute
+to The Ordnung (that is, this document tree).
+
+currently this article is all "technical", written as if it's addressing
+an experienced developer.
+
+at writing this document will certainly be incomplete most conspicuously
+in its lack of documenting how to push out changes to The Ordnung.
+
+mainly we don't have a good workflow for how to anyone may publish
+changes (wiki-like), but we can burn that bridge later.
+
 
 
 
@@ -25,6 +38,8 @@ on OS X we think we did something like:
 ```sh
 $ brew install hugo
 ```
+version schmersion.
+
 
 
 ### create a new hugo site
@@ -77,7 +92,7 @@ cd ..
 ☝️ this much is necessary once for every new checkout of an The Ordnung.
 
 (we could instead try to use git submodules, but we aren't because they
-are annoying.
+are annoying.)
 
 
 
@@ -96,4 +111,56 @@ it's a step towards that.
 that's it! (for now)
 
 
+
+
+## editing markdown
+
+in addition to what we propose here, please try to follow whatever existing
+conventions are apparenly at play in any existing documents you edit.
+our main guidelines (in descending order of importance) are:
+
+  1. no trailing whitespace on any line.
+
+  1. do not exceed 79 characters on a line.
+     (the 80th caracter is one too many.)
+     we can except fixed-width sections (like for code) and ASCII art and the
+     like, but even then it's bad to go too wide.
+     explaining why is out of scope, but there are at least two reasons.
+     long url's etc are excepted.
+
+  1. four blank lines before each non-first major section. ("major sections"
+     are the ones whose headers use two octothorpes. the first section of
+     a document doesn't need this many.)
+
+  1. three blank lines before each sub-major section (the ones with three
+     octothorpes).
+
+  1. the last line of a file should have content on it. (don't end files
+     with a blank line.)
+
+
+
+
+## writing git commit messages
+
+we have adopted [the same guidelines][hugo2] that hugo uses, mixed in
+with some OCD of our own:
+
+  - "each commit message should have a title/subject in imperative mood
+    starting with a capital letter and no trailing period" (see reference).
+
+  - the first line of the commit message is ideally 50 chars or less.
+    commit messages whose first line is wider than 79 chars may be rejected.
+
+  - the first line of the commit message and any subsequent lines in it must
+    be separated by exactly one blank line.
+
+  - commit messages longer than one line are great, but if they are the result
+    of a squash etc, edit the message so it makes a coherent whole instead of
+    just a series of other messages concatenated to each other.
+
+
+
+
 [hugo]: http://gohugo.io
+[hugo2]: https://github.com/gohugoio/hugo/blob/master/CONTRIBUTING.md#git-commit-message-guidelines
